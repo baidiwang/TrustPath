@@ -5,7 +5,11 @@
       "destination": "/api/static?file=src/:path*"
     },
     {
-      "source": "/:path((?!api/.*).*)",
+      "source": "/",
+      "destination": "/api/static?file=index.html"
+    },
+    {
+      "source": "/index.html",
       "destination": "/api/static?file=index.html"
     }
   ]
