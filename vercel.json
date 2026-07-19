@@ -1,8 +1,12 @@
 {
   "rewrites": [
     {
-      "source": "/((?!api/.*|src/.*|.*\\..*).*)",
-      "destination": "/index.html"
+      "source": "/src/:path*",
+      "destination": "/api/static?file=src/:path*"
+    },
+    {
+      "source": "/:path((?!api/.*).*)",
+      "destination": "/api/static?file=index.html"
     }
   ]
 }
