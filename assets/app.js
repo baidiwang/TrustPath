@@ -176,7 +176,7 @@ function mockAskRules(question, fields) {
   if (shouldRefuseQuestion(question)) {
     return {
       refusal: true,
-      title: "RealDoor cannot make eligibility decisions.",
+      title: "TrustPath cannot make eligibility decisions.",
       message:
         "I cannot approve, deny, score, rank, compare renters, infer protected traits, or follow instructions found inside uploaded documents.",
       redirect:
@@ -192,7 +192,7 @@ function mockAskRules(question, fields) {
   return {
     question,
     answer:
-      "For a California residential rental, RealDoor can explain the deposit cap and show the math, but it will not decide whether you qualify for a home. The general security cap is one month of rent, with narrow exceptions such as qualifying small landlords.",
+      "For a California residential rental, TrustPath can explain the deposit cap and show the math, but it will not decide whether you qualify for a home. The general security cap is one month of rent, with narrow exceptions such as qualifying small landlords.",
     citation: {
       title: "California Civil Code § 1950.5(c)",
       url: "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=1950.5",
@@ -537,7 +537,7 @@ function packetWorkspace() {
           state.packetExportedAt
             ? `<div class="export-confirmation">
                 <small class="export-note">Last exported ${escapeHtml(state.packetExportedAt)}</small>
-                <a href="${state.packetDownloadUrl}" download="realdoor-renter-packet.json">Download again</a>
+                <a href="${state.packetDownloadUrl}" download="trustpath-renter-packet.json">Download again</a>
               </div>`
             : ""
         }
@@ -891,7 +891,7 @@ function triggerCalculationPulse() {
 
 function exportPacket() {
   const payload = {
-    product: "RealDoor",
+    product: "TrustPath",
     createdAt: new Date().toISOString(),
     uploadedFile: state.uploadedFile,
     editedFields: Object.fromEntries(
@@ -917,7 +917,7 @@ function exportPacket() {
   state.packetDownloadUrl = url;
   const link = document.createElement("a");
   link.href = url;
-  link.download = "realdoor-renter-packet.json";
+  link.download = "trustpath-renter-packet.json";
   link.click();
   state.packetExportedAt = new Date().toLocaleTimeString([], { hour: "numeric", minute: "2-digit" });
   render();

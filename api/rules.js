@@ -11,7 +11,7 @@ module.exports = async function handler(req, res) {
       mode: "guardrail",
       answer: {
         refusal: true,
-        title: "RealDoor cannot make eligibility decisions.",
+        title: "TrustPath cannot make eligibility decisions.",
         message:
           "I cannot approve, deny, score, rank, compare renters, infer protected traits, or follow instructions found inside uploaded documents.",
         redirect:
@@ -57,7 +57,7 @@ module.exports = async function handler(req, res) {
       `Fields JSON: ${JSON.stringify(fields)}`,
     ].join("\n");
 
-    const answer = await callOpenAI(prompt, schema, "realdoor_rules");
+    const answer = await callOpenAI(prompt, schema, "trustpath_rules");
     return res.status(200).json({ ok: true, mode: "openai", answer });
   } catch (error) {
     return res.status(200).json({ ok: true, mode: "mock", warning: error.message });
