@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "node server.js",
     "start": "node server.js",
-    "check": "node --check server.js && node --check src/app.js && node --check api/extract.js && node --check api/rules.js"
+    "check": "node --check server.js && node --check src/app.js && node --check api/extract.js && node --check api/rules.js",
+    "build": "mkdir -p public/src && cp index.html public/index.html && cp src/app.js public/src/app.js && cp src/styles.css public/src/styles.css"
   }
 }
