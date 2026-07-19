@@ -1,0 +1,10 @@
+{
+  "name": "trustpath",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "node server.js",
+    "start": "node server.js",
+    "check": "node --check server.js && node --check src/app.js && node --check api/extract.js && node --check api/rules.js"
+  }
+}
