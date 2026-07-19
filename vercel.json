@@ -1,16 +1,4 @@
 {
-  "rewrites": [
-    {
-      "source": "/src/:path*",
-      "destination": "/api/static?file=src/:path*"
-    },
-    {
-      "source": "/",
-      "destination": "/api/static?file=index.html"
-    },
-    {
-      "source": "/index.html",
-      "destination": "/api/static?file=index.html"
-    }
-  ]
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist"
 }
