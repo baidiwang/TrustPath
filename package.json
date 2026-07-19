@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "node server.js",
     "start": "node server.js",
-    "check": "node --check server.js && node --check assets/app.js && node --check api/extract.js && node --check api/rules.js && node --check api/static.js",
-    "build": "mkdir -p public/assets dist/assets && cp index.html public/index.html && cp assets/app.js public/assets/app.js && cp assets/styles.css public/assets/styles.css && cp index.html dist/index.html && cp assets/app.js dist/assets/app.js && cp assets/styles.css dist/assets/styles.css"
+    "check": "node --check server.js && node --check assets/app.js && node --check api/extract.js && node --check api/rules.js",
+    "build": "mkdir -p dist/assets && cp index.html dist/index.html && cp assets/app.js dist/assets/app.js && cp assets/styles.css dist/assets/styles.css"
   }
 }
