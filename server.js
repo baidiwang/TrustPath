@@ -3,6 +3,7 @@ const fs = require("fs");
 const path = require("path");
 
 const root = __dirname;
+const staticRoot = path.join(root, "public");
 const port = Number(process.env.PORT || 4173);
 
 loadEnvFile(path.join(root, ".env.local"));
@@ -294,8 +295,8 @@ function cloneProfile(fileName) {
 
 function serveStatic(pathname, res) {
   const safePath = pathname === "/" ? "/index.html" : pathname;
-  const filePath = path.normalize(path.join(root, safePath));
-  if (!filePath.startsWith(root)) {
+  const filePath = path.normalize(path.join(staticRoot, safePath));
+  if (!filePath.startsWith(staticRoot)) {
     res.writeHead(403);
     return res.end("Forbidden");
   }
