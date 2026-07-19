@@ -114,7 +114,7 @@ const packetRequirements = [
 
 const safeguards = [
   "Document text is treated as untrusted and never executed as app instructions.",
-  "RealDoor does not approve, deny, score, rank, or infer protected traits.",
+  "TrustPath does not approve, deny, score, rank, or infer protected traits.",
   "Session data stays in browser memory until the user exports a packet.",
 ];
 
@@ -325,11 +325,11 @@ function render() {
   app.innerHTML = `
     <div class="app-frame">
       <aside class="journey-rail" aria-label="Trust Journey">
-        <a class="brand" href="#/upload" aria-label="RealDoor home">
-          <span class="brand-mark">RD</span>
+        <a class="brand" href="#/upload" aria-label="TrustPath home">
+          <span class="brand-mark">TP</span>
           <span>
-            <strong>RealDoor</strong>
-            <small>Trust workspace</small>
+            <strong>TrustPath</strong>
+            <small>Transparent AI Workspace</small>
           </span>
         </a>
 
@@ -420,9 +420,9 @@ function profileWorkspace() {
     <section class="document-stage">
       <div class="upload-copy">
         <span class="eyebrow">Document review</span>
-        <h2>Upload your supporting documents. We'll highlight what we find. You confirm what's true.</h2>
+        <h2>Document Review</h2>
         <p>
-          Document text is treated as untrusted. RealDoor extracts evidence, shows confidence, and waits for your confirmation.
+          Document text is treated as untrusted. TrustPath highlights evidence first, then asks you to confirm the extracted values.
         </p>
         <div class="action-row">
           <label class="button ${state.extractionReady ? "secondary" : "primary"} file-button">
@@ -494,8 +494,8 @@ function rulesWorkspace() {
     <section class="rules-workspace">
       <div class="rules-input">
         <span class="eyebrow">Rule explanation</span>
-        <h2>Get a cited answer without turning it into a decision.</h2>
-        <p>RealDoor answers narrow rules questions for packet planning and refuses eligibility decisions.</p>
+        <h2>Rule Explanation</h2>
+        <p>TrustPath answers narrow rules questions for packet planning and refuses eligibility decisions.</p>
         <textarea data-field="ruleQuestion" rows="3">${escapeHtml(state.ruleQuestion)}</textarea>
         <div class="action-row">
           <button class="button primary" data-action="ask-rule">Explain rule</button>
@@ -518,9 +518,9 @@ function packetWorkspace() {
   return `
     <section class="packet-workspace">
       <div class="packet-intro">
-        <span class="eyebrow">Packet readiness</span>
+        <span class="eyebrow">Packet Review</span>
         <h2>${readyCount} of ${requiredCount} required items ready</h2>
-        <p>Missing and expired items are identified from edited fields. RealDoor prepares documents; it does not rank or score the renter.</p>
+        <p>Missing and expired items are identified from edited fields. TrustPath prepares documents; it does not rank or score the renter.</p>
         <div class="packet-preview">
           <strong>Packet preview</strong>
           <span>Verified profile</span>
